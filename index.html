@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devlpor LINUX there</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      max-width: 200px;
+      border-radius: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    .intro {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      padding: 0 1rem;
+    }
+    .typewriter {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      color: #00ffcc;
+      min-height: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    nav button {
+      background: #222;
+      color: #00ffcc;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    nav button:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+    .power {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .power button {
+      padding: 1rem;
+      background: red;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 0 20px red;
+    }
+    .footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+    }
+    .footer a {
+      color: #00ffcc;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    #clock {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    video {
+      display: block;
+      margin: 2rem auto;
+      max-width: 90%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <img src="https://files.catbox.moe/ya1ghn.jpg" alt="Developer">
+    <h1>Linux here 👀</h1>
+  </header>
+  <p class="intro">Halo para developer! Saya ada web. yang di buat oleh developer ini dikembangkan oleh sistem. Bisa saya bantu apa pun yang terjadi.</p>
+  <div class="typewriter" id="typewriter"></div>
+  <nav>
+    <button>Web</button>
+    <button>HTML</button>
+    <button>Jaul Developer</button>
+    <button>Wifi Hack</button>
+    <button>Cyber</button>
+    <button>VPS</button>
+    <button>Cluster Media</button>
+    <button>EncJavaScript</button>
+    <button>Linux Ubuntu</button>
+    <button>doxing</button>
+    <button>YouTube</button>
+    <button>cyber media</button>
+    <button>scpit</button>
+  </nav>
+  <div class="power">
+    <button onclick="alert('Sistem Dinyalakan!')">✨</button>
+  </div>
+  <video controls autoplay loop>
+    
+    <source src="https://files.catbox.moe/jqjvlg.mp4" type="video/mp4">
+  </video>
+  <div id="clock"></div>
+  <div class="footer">
+    <a href="https://wa.me/">WhatsApp</a>
+    <a href="https://t.me/">Telegram</a>
+    <a href="https://github.com/">GitHub</a>
+  </div>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/5dcxmz.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    const texts = ["Web", "HTML", "Jaul Developer", "Wifi Hack", "Cyber", "VPS", "Cluster Media", "EncJavaScript", "Linux Ubuntu"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById("typewriter").textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 150);
+      }
+    }
+    type();
+
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleString();
+    }
+    setInterval(updateClock, 1000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
+  </script>
+</body>
+</html>
